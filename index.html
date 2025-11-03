@@ -3,64 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Who is Stephen Miller (and why does he suck)?</title>
+  <title>Who is Stephen Miller (and Why Does He Suck)?</title>
   <style>
-    /* Basic styles for light mode */
-    body {
+    /* Reset and base styles */
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 1em;
-      font-family: system-ui, sans-serif;
-      line-height: 1.6;
-      background: #ffffff;
-      color: #222222;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      padding: 0;
     }
-    h1, h2, h3 {
-      font-weight: 700;
-      line-height: 1.2;
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    h1, h2 {
+      font-weight: 800;
+      letter-spacing: -0.025em;
     }
     h1 {
-      font-size: 2em;
-      margin: 0.5em 0;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #b20000;
     }
     h2 {
-      font-size: 1.4em;
-      margin: 1em 0 0.5em;
+      font-size: 1.75rem;
+      margin: 2rem 0 1rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: box-shadow 0.3s ease;
+    }
+    li:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    li strong {
+      display: block;
+      font-size: 1.2rem;
+      color: #b20000;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+      text-align: justify;
+    }
+    .quote {
+      font-style: italic;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #555;
+      margin: 2rem 0;
+      padding: 1rem 2rem;
+      border-left: 4px solid #b20000;
+      background: #fff;
     }
     a {
       color: #b20000;
+      text-decoration: none;
+      transition: color 0.2s ease;
     }
-    /* Call-to-action button style */
+    a:hover {
+      color: #8c0000;
+    }
+    /* CTA button */
+    .cta-container {
+      text-align: center;
+      margin: 3rem 0;
+    }
     .cta {
       display: inline-block;
       background: #b20000;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 0.75em 1.25em;
-      border-radius: 4px;
-      font-weight: bold;
-      font-size: 1em;
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 6px rgba(178, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(178, 0, 0, 0.3);
       background: #8c0000;
     }
-    /* Dark mode styles */
+    /* Dark mode */
     @media (prefers-color-scheme: dark) {
       body {
-        background: #121212;
-        color: #dddddd;
+        background: #1a1a1a;
+        color: #ddd;
+      }
+      h1 {
+        color: #ff756b;
+      }
+      h2 {
+        border-bottom: 2px solid #333;
+      }
+      li {
+        background: #222;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      li:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+      li strong {
+        color: #ff756b;
+      }
+      .quote {
+        color: #bbb;
+        border-left: 4px solid #ff756b;
+        background: #222;
       }
       a {
         color: #ff756b;
       }
+      a:hover {
+        color: #ffa39c;
+      }
       .cta {
         background: #ff756b;
-        color: #000000;
+        color: #000;
+        box-shadow: 0 4px 6px rgba(255, 117, 107, 0.3);
       }
       .cta:hover {
         background: #ffa39c;
+        box-shadow: 0 6px 8px rgba(255, 117, 107, 0.4);
       }
     }
   </style>
@@ -71,17 +152,17 @@
 
   <h2>Why Protest Stephen Miller?</h2>
   <ul>
-    <li>**Family Separation:** Stephen Miller was the chief architect of Trump’s infamous family separation policy, which ripped about 5,000 children – some as young as 4 months old – from their parents at the U.S.-Mexico border:contentReference[oaicite:0]{index=0}. He reportedly gave the orders for this cruel practice as Trump’s anti-immigrant enforcer, believing that inflicting such trauma would deter others from migrating:contentReference[oaicite:1]{index=1}:contentReference[oaicite:2]{index=2}.</li>
-    <li>**Muslim Travel Ban:** Miller was also the 31-year-old architect behind Trump’s first “Muslim ban” – an executive order barring entry from several Muslim-majority countries:contentReference[oaicite:3]{index=3}. He played a fundamental role in creating this policy:contentReference[oaicite:4]{index=4}, which triggered mass outrage and was so legally problematic it had to be reworked multiple times before it could take effect:contentReference[oaicite:5]{index=5}.</li>
-    <li>**White Nationalist Ideology:** Leaked emails show Miller’s *“penchant for white nationalism”*:contentReference[oaicite:6]{index=6}. He promoted extremist content – even suggesting a racist novel about “white genocide” for Breitbart to cover:contentReference[oaicite:7]{index=7} – and endorsed the concept of “remigration,” a call to forcibly remove non-European immigrant families regardless of citizenship:contentReference[oaicite:8]{index=8}. These revelations led dozens of members of Congress to demand Miller’s resignation for injecting white supremacist ideas into policy.</li>
-    <li>**Division and Fear:** As Trump’s speechwriter, Miller filled speeches with apocalyptic imagery and fear-mongering about immigrants:contentReference[oaicite:9]{index=9}. His signature style has been described as “dark, divisive, and shot through with… provocation”:contentReference[oaicite:10]{index=10} – exemplified by Trump’s dystopian “American Carnage” messaging:contentReference[oaicite:11]{index=11}. In short, Miller’s rhetoric favors provoking fear and resentment over unity or hope.</li>
+    <li><strong>Family Separation:</strong> Stephen Miller was the chief architect of Trump’s infamous family separation policy, which ripped about 5,000 children – some as young as 4 months old – from their parents at the U.S.-Mexico border. He reportedly gave the orders for this cruel practice as Trump’s anti-immigrant enforcer, believing that inflicting such trauma would deter others from migrating.</li>
+    <li><strong>Muslim Travel Ban:</strong> Miller was also the 31-year-old architect behind Trump’s first “Muslim ban” – an executive order barring entry from several Muslim-majority countries. He played a fundamental role in creating this policy, which triggered mass outrage and was so legally problematic it had to be reworked multiple times before it could take effect.</li>
+    <li><strong>White Nationalist Ideology:</strong> Leaked emails show Miller’s “penchant for white nationalism.” He promoted extremist content – even suggesting a racist novel about “white genocide” for Breitbart to cover – and endorsed the concept of “remigration,” a call to forcibly remove non-European immigrant families regardless of citizenship. These revelations led dozens of members of Congress to demand Miller’s resignation for injecting white supremacist ideas into policy.</li>
+    <li><strong>Division and Fear:</strong> As Trump’s speechwriter, Miller filled speeches with apocalyptic imagery and fear-mongering about immigrants. His signature style has been described as “dark, divisive, and shot through with… provocation” – exemplified by Trump’s dystopian “American Carnage” messaging. In short, Miller’s rhetoric favors provoking fear and resentment over unity or hope.</li>
   </ul>
 
-  <p><em>E Pluribus Unum</em> – “Out of many, one.” America’s strength is unity in diversity, but Stephen Miller’s career has been about sowing division and fear. That’s why so many Americans protest his influence and policies.</p>
+  <p class="quote"><em>E Pluribus Unum</em> – “Out of many, one.” America’s strength is unity in diversity, but Stephen Miller’s career has been about sowing division and fear. That’s why so many Americans protest his influence and policies.</p>
 
-  <p style="text-align: center; margin: 2em 0;">
+  <div class="cta-container">
     <a class="cta" href="https://stephen-miller.redbubble.com" target="_blank" rel="noopener">Show Your Opposition – Get the Gear</a>
-  </p>
+  </div>
 
 </body>
 </html>
