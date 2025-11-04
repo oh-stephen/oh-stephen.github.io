@@ -160,6 +160,35 @@
       opacity: 1;
       transform: translateY(0);
     }
+    /* Sticky bottom nav bar */
+    #sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      text-align: center;
+      padding: 0.5rem 0;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+      display: none;
+      z-index: 1000;
+    }
+    .small-cta {
+      display: inline-block;
+      background: #c8102e;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: 0 2px 4px rgba(200, 16, 46, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+    .small-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(200, 16, 46, 0.3);
+      background: #a50d24;
+    }
     /* Mobile adjustments */
     @media (max-width: 768px) {
       li {
@@ -224,6 +253,16 @@
         background: #a50d24;
         box-shadow: 0 6px 8px rgba(200, 16, 46, 0.4);
       }
+      #sticky-cta {
+        background: #001f3f;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .small-cta {
+        box-shadow: 0 2px 4px rgba(200, 16, 46, 0.3);
+      }
+      .small-cta:hover {
+        box-shadow: 0 4px 6px rgba(200, 16, 46, 0.4);
+      }
     }
   </style>
 </head>
@@ -270,6 +309,10 @@
     <p class="quote-text"><a class="cta" href="https://stephen-miller.redbubble.com" target="_blank" rel="noopener">Get the Gear</a></p>
   </div>
 
+  <div id="sticky-cta">
+    <a class="small-cta" href="https://stephen-miller.redbubble.com" target="_blank" rel="noopener">Get the Gear</a>
+  </div>
+
   <script>
     const sections = document.querySelectorAll('.section');
     const observerOptions = {
@@ -286,6 +329,20 @@
     sections.forEach(section => {
       observer.observe(section);
     });
+
+    // Sticky CTA logic
+    const finalSection = document.querySelector('.section:last-of-type');
+    const stickyCta = document.getElementById('sticky-cta');
+    const stickyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          stickyCta.style.display = 'block';
+        } else {
+          stickyCta.style.display = 'none';
+        }
+      });
+    }, { threshold: 0 });
+    stickyObserver.observe(finalSection);
   </script>
 
 </body>
