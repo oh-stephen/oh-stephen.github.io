@@ -359,18 +359,19 @@
     });
 
     // Sticky CTA logic
-    const finalSection = document.querySelector('.section:last-of-type');
-    const stickyCta = document.getElementById('sticky-cta');
-    const stickyObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-          stickyCta.classList.add('visible');
-        } else {
-          stickyCta.classList.remove('visible');
-        }
-      });
-    }, { threshold: 0 });
-    stickyObserver.observe(finalSection);
+    // Sticky CTA logic
+const motto = document.querySelector('.motto');
+const stickyCta = document.getElementById('sticky-cta');
+const stickyObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      stickyCta.classList.add('visible');
+    } else {
+      stickyCta.classList.remove('visible');
+    }
+  });
+}, { threshold: 0 });
+stickyObserver.observe(motto);
   </script>
 
 </body>
