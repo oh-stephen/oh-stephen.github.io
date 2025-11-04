@@ -56,6 +56,7 @@
       transition: box-shadow 0.3s ease;
       display: flex;
       align-items: flex-start;
+      flex-direction: row;
     }
     li:hover {
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -158,6 +159,17 @@
       opacity: 1;
       transform: translateY(0);
     }
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      li {
+        flex-direction: column;
+      }
+      .item-image {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+      }
+    }
     /* Dark mode */
     @media (prefers-color-scheme: dark) {
       body {
@@ -221,28 +233,29 @@
   <h1>Who is Stephen Miller</h1>
   <p class="subtitle">(and Why Does He Suck)?</p>
 
+  <h2>Why Protest Stephen Miller?</h2>
   <ul>
     <li class="section">
       <div class="item-content">
-        <strong>Family Separation</strong> Stephen Miller was the chief architect of Trump’s infamous family separation policy, which ripped about 5,000 children – some as young as 4 months old – from their parents at the U.S.-Mexico border. He reportedly gave the orders for this cruel practice as Trump’s anti-immigrant enforcer, believing that inflicting such trauma would deter others from migrating. <a href="https://www.politico.com/story/2018/06/21/stephen-miller-family-separations-immigration-policy-664278" target="_blank" class="source">[Source]</a>
+        <strong>Family Separation:</strong> Stephen Miller was the chief architect of Trump’s infamous family separation policy, which ripped about 5,000 children – some as young as 4 months old – from their parents at the U.S.-Mexico border. He reportedly gave the orders for this cruel practice as Trump’s anti-immigrant enforcer, believing that inflicting such trauma would deter others from migrating. <a href="https://www.politico.com/story/2018/06/21/stephen-miller-family-separations-immigration-policy-664278" target="_blank" class="source">[Source]</a>
       </div>
       <img src="https://i.guim.co.uk/img/media/45468b25669f96c75ba884941793f70213584921/0_470_5669_3189/5669.jpg?width=465&dpr=1&s=none&crop=none" alt="Family Separation Horror" class="item-image">
     </li>
     <li class="section">
       <div class="item-content">
-        <strong>Muslim Travel Ban</strong> Miller was also the 31-year-old architect behind Trump’s first “Muslim ban” – an executive order barring entry from several Muslim-majority countries. He played a fundamental role in creating this policy, which triggered mass outrage and was so legally problematic it had to be reworked multiple times before it could take effect. <a href="https://www.cnn.com/2017/05/19/politics/stephen-miller-islam-travel-ban-speech-writing" target="_blank" class="source">[Source]</a>
+        <strong>Muslim Travel Ban:</strong> Miller was also the 31-year-old architect behind Trump’s first “Muslim ban” – an executive order barring entry from several Muslim-majority countries. He played a fundamental role in creating this policy, which triggered mass outrage and was so legally problematic it had to be reworked multiple times before it could take effect. <a href="https://www.cnn.com/2017/05/19/politics/stephen-miller-islam-travel-ban-speech-writing" target="_blank" class="source">[Source]</a>
       </div>
       <img src="https://i.guim.co.uk/img/media/e616b1f447cf45bff7428fc760501e6ba2219066/0_138_3600_2160/master/3600.jpg?width=445&dpr=1&s=none&crop=none" alt="Muslim Travel Ban Chaos" class="item-image">
     </li>
     <li class="section">
       <div class="item-content">
-        <strong>White Nationalist Ideology</strong> Leaked emails show Miller’s “penchant for white nationalism.” He promoted extremist content – even suggesting a racist novel about “white genocide” for Breitbart to cover – and endorsed the concept of “remigration,” a call to forcibly remove non-European immigrant families regardless of citizenship. These revelations led dozens of members of Congress to demand Miller’s resignation for injecting white supremacist ideas into policy. <a href="https://www.splcenter.org/resources/guides/stephen-miller-breitbart-emails/" target="_blank" class="source">[Source]</a>
+        <strong>White Nationalist Ideology:</strong> Leaked emails show Miller’s “penchant for white nationalism.” He promoted extremist content – even suggesting a racist novel about “white genocide” for Breitbart to cover – and endorsed the concept of “remigration,” a call to forcibly remove non-European immigrant families regardless of citizenship. These revelations led dozens of members of Congress to demand Miller’s resignation for injecting white supremacist ideas into policy. <a href="https://www.splcenter.org/resources/guides/stephen-miller-breitbart-emails/" target="_blank" class="source">[Source]</a>
       </div>
       <img src="https://www.adl.org/sites/default/files/images/2025-02/axel%20main%20image.jpg" alt="White Nationalism Horror" class="item-image">
     </li>
     <li class="section">
       <div class="item-content">
-        <strong>Division and Fear</strong> As Trump’s speechwriter, Miller filled speeches with apocalyptic imagery and fear-mongering about immigrants. His signature style has been described as “dark, divisive, and shot through with… provocation” – exemplified by Trump’s dystopian “American Carnage” messaging. In short, Miller’s rhetoric favors provoking fear and resentment over unity or hope. <a href="https://www.newyorker.com/magazine/2020/03/02/how-stephen-miller-manipulates-donald-trump-to-further-his-immigration-obsession" target="_blank" class="source">[Source]</a>
+        <strong>Division and Fear:</strong> As Trump’s speechwriter, Miller filled speeches with apocalyptic imagery and fear-mongering about immigrants. His signature style has been described as “dark, divisive, and shot through with… provocation” – exemplified by Trump’s dystopian “American Carnage” messaging. In short, Miller’s rhetoric favors provoking fear and resentment over unity or hope. <a href="https://www.newyorker.com/magazine/2020/03/02/how-stephen-miller-manipulates-donald-trump-to-further-his-immigration-obsession" target="_blank" class="source">[Source]</a>
       </div>
       <img src="https://www.americanimmigrationcouncil.org/wp-content/uploads/2025/01/immigration-impact-trump-day-one-orders.jpg" alt="Division and Fear" class="item-image">
     </li>
