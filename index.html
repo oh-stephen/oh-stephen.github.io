@@ -336,7 +336,7 @@
 
   <div id="sticky-cta">
     <div class="sticky-container">
-      <span class="sticky-text">Since Miller essentially <em>is</em> Trump, voice your disapproval for both:</span>
+      <span class="sticky-text">Stephen Miller essentially <em>is</em> Trump, voice your disapproval for both:</span>
       <a class="small-cta" href="https://stephen-miller.redbubble.com" target="_blank" rel="noopener">Get the Gear</a>
     </div>
   </div>
@@ -359,19 +359,18 @@
     });
 
     // Sticky CTA logic
-    // Sticky CTA logic
-const motto = document.querySelector('.motto');
-const stickyCta = document.getElementById('sticky-cta');
-const stickyObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) {
-      stickyCta.classList.add('visible');
-    } else {
-      stickyCta.classList.remove('visible');
-    }
-  });
-}, { threshold: 0 });
-stickyObserver.observe(motto);
+    const motto = document.querySelector('.motto');
+    const stickyCta = document.getElementById('sticky-cta');
+    const stickyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          stickyCta.classList.add('visible');
+        } else {
+          stickyCta.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0 });
+    stickyObserver.observe(motto);
   </script>
 
 </body>
