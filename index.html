@@ -167,11 +167,25 @@
       left: 0;
       width: 100%;
       background: #ffffff;
-      text-align: center;
-      padding: 0.5rem 0;
       box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
       z-index: 1000;
+    }
+    #sticky-cta.visible {
+      opacity: 1;
+    }
+    .sticky-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+    }
+    .sticky-text {
+      font-size: 0.9rem;
+      color: #555;
     }
     .small-cta {
       display: inline-block;
@@ -198,6 +212,14 @@
         margin-left: 0;
         margin-top: 1rem;
         width: 100%;
+      }
+      .sticky-container {
+        padding: 0.5rem;
+        flex-direction: column;
+        text-align: center;
+      }
+      .sticky-text {
+        margin-bottom: 0.5rem;
       }
     }
     /* Dark mode */
@@ -257,6 +279,9 @@
         background: #001f3f;
         box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3);
       }
+      .sticky-text {
+        color: #dddddd;
+      }
       .small-cta {
         box-shadow: 0 2px 4px rgba(200, 16, 46, 0.3);
       }
@@ -310,7 +335,10 @@
   </div>
 
   <div id="sticky-cta">
-    <a class="small-cta" href="https://stephen-miller.redbubble.com" target="_blank" rel="noopener">Get the Gear</a>
+    <div class="sticky-container">
+      <span class="sticky-text">Since Miller essentially <em>is</em> Trump, voice your disapproval for both:</span>
+      <a class="small-cta" href="https://stephen-miller.redbubble.com" target="_blank" rel="noopener">Get the Gear</a>
+    </div>
   </div>
 
   <script>
@@ -336,9 +364,9 @@
     const stickyObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) {
-          stickyCta.style.display = 'block';
+          stickyCta.classList.add('visible');
         } else {
-          stickyCta.style.display = 'none';
+          stickyCta.classList.remove('visible');
         }
       });
     }, { threshold: 0 });
