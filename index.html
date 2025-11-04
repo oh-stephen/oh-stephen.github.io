@@ -69,15 +69,30 @@
       font-size: 1.1rem;
       text-align: justify;
     }
-    .quote {
+    .motto {
       font-style: italic;
+      text-align: center;
+      font-size: 1.8rem;
+      color: #002868;
+      margin: 3rem 0 1rem;
+      position: relative;
+      padding: 1rem 2rem;
+    }
+    .motto::before,
+    .motto::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 2px;
+      background: #c8102e;
+      margin: 1rem auto;
+    }
+    .quote-text {
       text-align: center;
       font-size: 1.2rem;
       color: #555;
-      margin: 2rem 0;
-      padding: 1rem 2rem;
-      border-left: 4px solid #c8102e;
-      background: #f9f9f9;
+      margin: 0 auto 2rem;
+      max-width: 600px;
     }
     a {
       color: #c8102e;
@@ -120,6 +135,16 @@
       box-shadow: 0 6px 8px rgba(200, 16, 46, 0.3);
       background: #a50d24;
     }
+    /* Fade-in animation */
+    .section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     /* Dark mode */
     @media (prefers-color-scheme: dark) {
       body {
@@ -146,10 +171,15 @@
       li strong {
         color: #ffcccb;
       }
-      .quote {
+      .motto {
+        color: #ffffff;
+      }
+      .motto::before,
+      .motto::after {
+        background: #ffcccb;
+      }
+      .quote-text {
         color: #dddddd;
-        border-left: 4px solid #ffcccb;
-        background: #003366;
       }
       a {
         color: #ffcccb;
@@ -175,19 +205,44 @@
   <h1>Who is Stephen Miller</h1>
   <p class="subtitle">(and Why Does He Suck)?</p>
 
-  <h2>Why Protest Stephen Miller?</h2>
-  <ul>
-    <li><strong>Family Separation:</strong> Stephen Miller was the chief architect of Trump’s infamous family separation policy, which ripped about 5,000 children – some as young as 4 months old – from their parents at the U.S.-Mexico border. He reportedly gave the orders for this cruel practice as Trump’s anti-immigrant enforcer, believing that inflicting such trauma would deter others from migrating. <a href="https://www.splcenter.org/resources/extremist-files/stephen-miller" target="_blank" class="source">[Source]</a></li>
-    <li><strong>Muslim Travel Ban:</strong> Miller was also the 31-year-old architect behind Trump’s first “Muslim ban” – an executive order barring entry from several Muslim-majority countries. He played a fundamental role in creating this policy, which triggered mass outrage and was so legally problematic it had to be reworked multiple times before it could take effect. <a href="https://www.cnn.com/2017/05/19/politics/stephen-miller-islam-travel-ban-speech-writing" target="_blank" class="source">[Source]</a></li>
-    <li><strong>White Nationalist Ideology:</strong> Leaked emails show Miller’s “penchant for white nationalism.” He promoted extremist content – even suggesting a racist novel about “white genocide” for Breitbart to cover – and endorsed the concept of “remigration,” a call to forcibly remove non-European immigrant families regardless of citizenship. These revelations led dozens of members of Congress to demand Miller’s resignation for injecting white supremacist ideas into policy. <a href="https://www.splcenter.org/resources/guides/stephen-miller-breitbart-emails" target="_blank" class="source">[Source]</a></li>
-    <li><strong>Division and Fear:</strong> As Trump’s speechwriter, Miller filled speeches with apocalyptic imagery and fear-mongering about immigrants. His signature style has been described as “dark, divisive, and shot through with… provocation” – exemplified by Trump’s dystopian “American Carnage” messaging. In short, Miller’s rhetoric favors provoking fear and resentment over unity or hope. <a href="https://www.newyorker.com/magazine/2020/03/02/how-stephen-miller-manipulates-donald-trump-to-further-his-immigration-obsession" target="_blank" class="source">[Source]</a></li>
-  </ul>
-
-  <p class="quote"><em>E Pluribus Unum</em> – “Out of many, one.” America’s strength is unity in diversity, but Stephen Miller’s career has been about sowing division and fear. That’s why so many Americans protest his influence and policies.</p>
-
-  <div class="cta-container">
-    <a class="cta" href="https://stephen-miller.redbubble.com" target="_blank" rel="noopener">Show Your Opposition – Get the Gear</a>
+  <div class="section">
+    <h2>Why Protest Stephen Miller?</h2>
+    <ul>
+      <li><strong>Family Separation</strong> Stephen Miller was the chief architect of Trump’s infamous family separation policy, which ripped about 5,000 children – some as young as 4 months old – from their parents at the U.S.-Mexico border. He reportedly gave the orders for this cruel practice as Trump’s anti-immigrant enforcer, believing that inflicting such trauma would deter others from migrating. <a href="https://www.politico.com/story/2018/06/21/stephen-miller-family-separations-immigration-policy-664278" target="_blank" class="source">[Source]</a></li>
+      <li><strong>Muslim Travel Ban</strong> Miller was also the 31-year-old architect behind Trump’s first “Muslim ban” – an executive order barring entry from several Muslim-majority countries. He played a fundamental role in creating this policy, which triggered mass outrage and was so legally problematic it had to be reworked multiple times before it could take effect. <a href="https://www.cnn.com/2017/05/19/politics/stephen-miller-islam-travel-ban-speech-writing" target="_blank" class="source">[Source]</a></li>
+      <li><strong>White Nationalist Ideology</strong> Leaked emails show Miller’s “penchant for white nationalism.” He promoted extremist content – even suggesting a racist novel about “white genocide” for Breitbart to cover – and endorsed the concept of “remigration,” a call to forcibly remove non-European immigrant families regardless of citizenship. These revelations led dozens of members of Congress to demand Miller’s resignation for injecting white supremacist ideas into policy. <a href="https://www.splcenter.org/resources/guides/stephen-miller-breitbart-emails/" target="_blank" class="source">[Source]</a></li>
+      <li><strong>Division and Fear</strong> As Trump’s speechwriter, Miller filled speeches with apocalyptic imagery and fear-mongering about immigrants. His signature style has been described as “dark, divisive, and shot through with… provocation” – exemplified by Trump’s dystopian “American Carnage” messaging. In short, Miller’s rhetoric favors provoking fear and resentment over unity or hope. <a href="https://www.newyorker.com/magazine/2020/03/02/how-stephen-miller-manipulates-donald-trump-to-further-his-immigration-obsession" target="_blank" class="source">[Source]</a></li>
+    </ul>
   </div>
+
+  <div class="section">
+    <p class="motto"><em>E Pluribus Unum</em> – “Out of many, one.”</p>
+    <p class="quote-text">America’s strength is unity in diversity, but Stephen Miller’s career has been about sowing division and fear. That’s why so many Americans protest his influence and policies.</p>
+  </div>
+
+  <div class="section">
+    <div class="cta-container">
+      <a class="cta" href="https://stephen-miller.redbubble.com" target="_blank" rel="noopener">Show Your Opposition – Get the Gear</a>
+    </div>
+  </div>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+    const observerOptions = {
+      threshold: 0.1
+    };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 
 </body>
 </html>
